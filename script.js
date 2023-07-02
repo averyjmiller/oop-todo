@@ -19,13 +19,15 @@ let todoArr = Storage.getStorage();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let id = Math.ceil(Math.random() * 10000000);
-  const todo = new Todo(id, input.value);
-  todoArr = [...todoArr, todo];
-  UI.displayData();
-  UI.clearInput();
-  UI.removeTodo();
-  Storage.addToStorage(todoArr);
+  if(input.value !== "") {
+    let id = Math.ceil(Math.random() * 10000000);
+    const todo = new Todo(id, input.value);
+    todoArr = [...todoArr, todo];
+    UI.displayData();
+    UI.clearInput();
+    UI.removeTodo();
+    Storage.addToStorage(todoArr);
+  }
 });
 
 class Todo {
