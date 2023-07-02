@@ -52,6 +52,7 @@ body {
   background-color: #fff;
   margin-top: 0.5rem;
   padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .todo span {
